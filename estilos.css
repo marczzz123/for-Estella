@@ -39,8 +39,8 @@ h1 {
 }
 
 p {
-  font-size: 0.95em;
-  line-height: 1.3em;
+  font-size: 0.70em;
+  line-height: 1.1em;
   white-space: pre-line;
   word-break: break-all;
   /* Más pequeño para cartas largas */
