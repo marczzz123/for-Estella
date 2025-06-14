@@ -60,20 +60,20 @@ let cartaContainer = document.getElementById('carta-container');
 let btnNo = document.getElementById('btn-no');
 let btnSi = document.getElementById('btn-si');
 
-// Frases que aparecerán en el botón "No" al hacer click
+
 const frasesNo = [
-  "¿Seguro? 😢",
-  "¿De verdad no? 💭",
-  "¿Ni un poquito? 🥺",
-  "¿No quieres pensarlo? 🥺🌹",
-  "¿Y si lo piensas un poco? 🥺💭",
-  "¡Vamos, di que sí! ",
-  "¿Tan seguro? 😔"
+ "你确定吗？😢",
+"真的不要吗？💭",
+"一点点也不可以吗？🥺",
+"不想再考虑一下吗？🥺🌹",
+"要不再想想看？🥺💭",
+"来嘛，说好嘛！",
+"你真的这么确定吗？😔"
 ];
 let noClickCount = 0;
 
 function respuestaSi() {
-  // Redirige a Instagram (abre en la app si está en el celular)
+
   window.location.href = "https://www.instagram.com/mar_kn17?igsh=a3lsMHQyZmZwdmE4";
 }
 
