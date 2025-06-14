@@ -106,7 +106,7 @@ function respuestaNo() {
     // Mueve el botón "No" mucho más arriba para que nunca quede tapado
     btnNo.style.position = 'absolute';
     btnNo.style.left = '50%';
-    btnNo.style.top = '25%'; // Mucho más arriba
+    btnNo.style.top = '10%'; // Más arriba aún
     btnNo.style.transform = `translate(-50%, -50%) scale(${btnNoScale})`;
 
     // Oculta o achica el texto de la carta tras el primer click
@@ -122,12 +122,25 @@ function respuestaNo() {
   btnSi.style.transition = 'transform 0.5s cubic-bezier(.68,-0.55,.27,1.55)';
   btnSi.style.transform = `translate(-50%, -50%) scale(${scaleX}, ${scaleY})`;
 
-  // Si es muy grande, oculta el popup/carta
+  // Si es muy grande, haz que el botón "Sí" ocupe toda la pantalla antes de ocultar el popup
   if (siScale > 10) {
-    btnSi.style.opacity = '0';
-    setTimeout(() => {
-      const popup = document.getElementById('mensaje-reconciliacion');
-      if (popup) popup.style.display = 'none';
-    }, 400);
+    btnSi.style.transition = 'all 0.5s cubic-bezier(.68,-0.55,.27,1.55)';
+    btnSi.style.left = '50%';
+    btnSi.style.top = '50%';
+    btnSi.style.width = '100vw';
+    btnSi.style.height = '100vh';
+    btnSi.style.borderRadius = '0';
+    btnSi.style.transform = 'translate(-50%, -50%) scale(1,1)';
+    btnSi.style.fontSize = '2.5em';
+    btnSi.style.display = 'flex';
+    btnSi.style.alignItems = 'center';
+    btnSi.style.justifyContent = 'center';
+    btnSi.style.pointerEvents = 'auto'; // Asegura que siga siendo clickeable
+
+    // Oculta el botón "No" para que no quede tapado al final
+    btnNo.style.opacity = '0';
+
+    // No ocultes el botón "Sí" ni el popup hasta que el usuario haga click en "Sí"
+    // El popup solo se cierra si el usuario pulsa "Sí"
   }
 }
